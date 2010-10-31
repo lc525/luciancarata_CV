@@ -1,0 +1,186 @@
+%***FILE:Lucian Carata CV.tex***LANG:en***
+%
+% This is the current version of Lucian Carata's CV, 
+% describing personal data, experience and skills. 
+%
+% The starting Latex template was taken from 
+% http://www.cv-templates.info/
+%
+%***/
+\documentclass[a4paper,10pt]{article}
+
+% Loading Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 								%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 						%better formatting of the A4 page
+\usepackage{supertabular} 							%for Grades
+\usepackage{stabular} 								%for Grades
+\usepackage{titlesec}								%custom \section
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{hyperref}								%colours for links
+\usepackage[absolute]{textpos}
+
+%## STYLE SETUP
+
+% Page & Header/Footers
+\pagestyle{fancyplain}
+\rhead{\fancyplain{}{\footnotesize{Lucian Carata - Curriculum Vit\ae}}}
+\lhead{\fancyplain{}{\thepage}}
+\cfoot{}
+\rfoot{\fancyplain{\footnotesize{Revised: \today}}{}}
+
+% Colors
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{headings}{HTML}{701112}
+\definecolor{notefour}{HTML}{424242}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+% Fonts
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+% Misc
+\titleformat{\section}{\color{headings}\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+\pagestyle{empty} 		% non-numbered pages
+\font\fb=''[cmr10]'' 	%for use with \LaTeX command
+
+%--------------------TITLE-------------------------------
+\par{\centering
+		{\Huge Lucian \textsc{Carata}
+	}\\
+\medskip
+%Zapfino Linotype Three
+%{\setmainfont{Bodoni MT}\LARGE{\textcolor{headings}{Curriculum Vit\ae}}
+\bigskip\par}
+
+%--------------------SECTIONS----------------------------
+%
+\thispagestyle{plain}
+\section{Personal Data}
+\begin{tabular}{rll}
+    \textsc{Place and Date of Birth:} & Iasi, Romania  | 03 May 1986 &\multirow{5}{*}{
+	 \XeTeXpicfile lucian.carata.png height 60pt}\\
+    \textsc{Address:}   & 12 Splai Bahlui Street, B11 3/15, Iasi, 700163, Romania\\
+    \textsc{Phone:}     & +40 726 898385\\
+    \textsc{email:}     & \href{mailto:lucian.carata@yahoo.co.uk}{lucian.carata@yahoo.co.uk}\\
+	 \textsc{web:}			& \href{http://mscenter.cs.tuiasi.ro/lucian.carata/index-en.html}{http://mscenter.cs.tuiasi.ro/lucian.carata}
+\end{tabular}
+
+%
+\section{Education}
+\begin{tabular}{rl}
+ \textsc{Current} & Master of Science in Distributed Systems, \textbf{Technical University of Iasi}, Romania\\
+& Degree expected in February 2011\\&\\
+ \textsc{June} 2009 & Bachelor of Engineering, \textbf{Technical University of Iasi}, Iasi, Romania\\
+& ranked \emph{first} in class of 120 | \small{Major: Information Technology}\\
+& \textbf{Thesis}: ``Object Recognition in Video Sequences Using Interest \\ 
+& Point Detection'' | \small{Advisor: Prof. Vasile \textsc{Manta},  Thesis Evaluation: 10/10}\\
+&\normalsize \textsc{Cgpa}: 9.95/10\hfill | \footnotesize Detailed List of Exams on request\\&\\
+\textsc{July} 2005& Bacalaureat Degree, \normalsize\textbf{Costache Negruzzi High school}, Iasi\\
+&\normalsize \textsc{Final Grade}: 9.87/10
+\end{tabular}
+
+%
+\section{Work Experience}
+\begin{stabular}{r|p{11cm}}
+ \emph{Current (Apr 2010)} & {\footnotesize\textsc{Employer:}} \textbf{Lucius \textsc{SRL}} \\\textsc{Sept 2003}&\footnotesize{\textsc{Location:}} Iasi, Romania \\&\emph{Software Developer, Software Architect}\\&\footnotesize{\textsc{Responsibilities:} Development of real-time software measuring systems, with applications in rolling mill industry. Managed software products: Mes4Roll, an application for real time measurement of rolls from a rolling mill. The rolls must be grinded within a 10$\mu{}m$ tolerance field relative to a given theoretical profile. I have been responsible for the software module that manages the real time feedback loop, communicating to the \textsc{CNC} machine the trajectory which it must follow in order to correct the errors, taking into account the measured roll errors, CNC inertia and system vibrations.\smallskip}\\&\footnotesize{\textbf{In production at:} POSCO Mexico CGL Plant, Salem Steel Plant India, Abu Dhabi Steel Construction - LLC}\\\multicolumn{2}{c}{} \\
+\end{stabular}
+
+\nocite{*}
+\bibliographystyle{plain}
+\renewcommand{\bibnumfmt}[1]{\textcolor{notefour}{\symbol{"2022}}}
+\renewcommand{\refname}{Publications \footnote{All the publications are available in electronic format (.pdf) from my website.}}
+{\small\bibliography{pub}}
+\newpage
+
+%
+\section{Undergraduate Work}
+\begin{stabular}{r|p{11cm}}
+ \emph{Current} & {\footnotesize\textsc{Project:}} \textbf{Cytrus} \\\textsc{Oct 2008}&\emph{Object recognition}\\&\footnotesize{Developed a modular, cross-platform graphic framework, aimed at (soft) real-time data acquisition and processing. On top of this framework, I have implemented an interest point object detection algorithm (Speed-up Robust Features - SURF), focusing on parallelization and high \emph{fps} output for large images. By efficiently using standard multicore architectures, a sustained throughput of 13 fps was obtained when processing images with a size of 720$\times$520. This almost doubles the processing speed compared to current single-threaded implementations (linear speedup).}\\&\footnotesize{\textbf{Using:} C/C++, advanced template structures, C\#, \textsc{BOOST} library, \textsc{GIL} library}\\\multicolumn{2}{c}{} \\
+ \textsc{Jan-Oct 2008} &  {\footnotesize\textsc{Project:}} \textbf{UTICrawl} \\&\emph{Distributed Web Crawler}\\&\footnotesize{Developed in a team of five, the experimental web crawler investigated distributed software architectures for processing huge amounts of web page and link data. A multi-layered agent-based solution was chosen, aiming for intelligent workload distribution among worker nodes and low-communication load balancing. I was in charge with the development of hash-based load balancing, overall system statistics and performance monitoring modules. }\\&\footnotesize{\textbf{Using:} C\#, \textsc{MSSQL}}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2007} & Summer Intern at \textsc{Code40}, \emph{Microprojects}\\&\footnotesize{C\#/ASP.Net project for enabling investors to finance small projects online. This was a pilot application for Holland Banks. I have developed the Microsoft Reporting Services integration module and various interface functionalities. For my contributions to the project, I have received  the \emph{Green Eminence} award.} \\&\footnotesize{\textbf{Using:} C\#, ASP.NET, SQL Reporting Services}\\\multicolumn{2}{c}{} \\
+\textsc{Jun 2007} &  {\footnotesize\textsc{Project:}} \textbf{SVNotify}\\\textsc{Oct 2006}&\emph{Eclipse Plugin}\\&\footnotesize{A client/server application that adds features (like commit notifications and automatic code update or the ability to chat between programmers) to a Subversion server. The client is an Eclipse plugin. I was the leader of a small team, and had the responsibility  of establishing the detailed application architecture and developing server-side functionality and integration with Subversion.} \\&\footnotesize{\textbf{Using:} Java, Subversion }\\\multicolumn{2}{c}{} \\
+\end{stabular}
+
+\thispagestyle{fancy}
+
+%
+\section{Awards and Scholarships}
+\begin{stabular}{rp{11cm}}
+\textsc{May} 2009 & Student Scientific Communication Sessions (TUIASI University), Special Award for the best practical solution\smallskip\\
+\textsc{Oct.} 2008 & A one-year special \emph{Research Scholarship}, awarded by the Technical University of Iasi, for outstanding academic achievements\smallskip\\
+\textsc{Oct.} 2008 & ACM Southeastern Europe Programming Contest, Honorable Mention\smallskip\\
+\textsc{May} 2008 & Hard \& Soft International Contest, $2^{nd}$ Prize (team of four)\smallskip\\
+\textsc{Oct.} 2006 & IEEE Computer Society CHC$_{60}$ competition, Honorable Mention, finalist | \emph{Team leader} (team of four)\smallskip\\
+\textsc{May} 2006 & Student Scientific Communication Sessions (TUIASI University), Special Mention\smallskip\\
+\textsc{May} 2005 & Doors to Diplomacy competition, $6^{th}$ place, finalist. (team of three)\smallskip\\
+\textsc{May} 2004 & County Informatics Olympiad, $1^{st}$ Mention\smallskip\\
+\textsc{May} 2003 & County Informatics Olympiad, $3^{rd}$ Place\smallskip\\
+2002, 2003 & Excellency Diploma from the Regional Center of Informatics for Young People Capable of Performance, Iasi\smallskip\\
+\textsc{May} 1998 & County Mathematics Olympiad, $1^{st}$ Mention\\\multicolumn{2}{c}{} \\
+\end{stabular}
+
+%
+\section{Technical Knowledge}
+\begin{stabular}{r|p{11cm}}
+Programming: & C/C++ (including STL, Boost), Java, C\# (.NET), parallel programming (MPI, OpenMP), Matlab, XML(XSD,XSLT), JavaScript, HTML, CSS, \\& Perl, Bash Scripting\\
+System administration: & Linux networking, SAMBA, Apache, Kernel basics, Distributed graphics computing\\\multicolumn{2}{c}{}\\
+Technologies: & OpenGL (advanced), DirectX (advanced), CUDA, ASP.NET (advanced), J2EE (intermediate), Microsoft Reporting Services (advanced), Windows Communication Framework (advanced), JADE (intermediate), LabWindows/CVI (advanced), UML Tools, {\fb \LaTeX}\\\multicolumn{2}{c}{}\\
+Databases: & Microsoft SQL Server, Oracle, MySQL\\\multicolumn{2}{c}{}\\
+Testing: & JUnit, NUnit, Visual Studio Unit Testing Framework\\
+%3D Modeling, CAD: & 3D Studio Max, AutoCAD, SolidWorks\\\multicolumn{2}{c}{}\\
+Version Control: & Git, Subversion, Microsoft Team Foundation Server (TFS)\\\multicolumn{2}{c}{} \\
+\end{stabular}
+
+%
+\section{Organizational and social skills}
+\begin{itemize}
+\item As a member of the Microsoft Center from my faculty, I participate in organizing yearly events and academic presentations. I also have the responsibility of coordinating weekly extracurricular ASP.NET lectures and laboratories for interested faculty students.
+\item I have been elected as the student representative in the Computer Engineering Faculty Council, having responsibilities in signaling and resolving community academic or organizational issues at faculty level. 
+\item Most of the projects in which I have been involved were carried out by small or medium-sized teams. I have always found teamwork a rewarding experience, and thus managed to communicate very well with all the people I worked with. As a team leader, I dealt with the mediation of divergent opinions, focusing the group's attention on the project's goal and encouraging positive competition. 
+\end{itemize}
+
+\thispagestyle{fancy}
+%
+\section{Languages}
+\begin{tabular}{rl}
+\textsc{English:}&C1+ Level (speaking, listening, writing)\\
+\textsc{German:}&B1 Level (speaking, listening, writing), "Zertifikat Deutsch" Certification\\
+\textsc{Romanian:}&Mother tongue (native)\\
+\multicolumn{2}{c}{} \\
+\end{tabular}
+
+%
+\section{Other Interests and Activities}
+\begin{stabular}{r|p{11cm}}
+\textbf{Extracurricular:}&\textbullet~~Microsoft Student Partner since 2007. Teaching a weekly ASP.Net Laboratory in the Microsoft Center from the faculty (for 3 years). I also give regular technical presentations at community events.\smallskip\\
+&\textbullet~~Trainer for a one week intensive .NET Framework/ASP.NET course at Ditech \textsc{srl}, Iasi (2009). The training was held for a Java/J2EE Senior Developer audience.\\\multicolumn{2}{c}{} \\
+\textbf{Leisure activities:}&Volleyball, Tennis, Hiking and Climbing, Photography, Fishing, Dancing\\\multicolumn{2}{c}{} \\
+\end{stabular}
+
+\thispagestyle{fancy}
+
+%
+\section{References}
+\begin{tabular*}{\textwidth}{rlccrl}
+\multicolumn{2}{l}{Mr. Vasile \textsc{Manta}, PhD}&&&\multicolumn{2}{l}{Mr. Mihai Horia \textsc{Zaharia}, PhD}\\
+\multicolumn{2}{l}{\footnotesize{Professor, Technical University of Iasi. Faculty Dean}}&&&\multicolumn{2}{l}{\footnotesize{Associate Professor, Technical University of Iasi}}\\
+\footnotesize{email:}&\href{mailto:vmanta@cs.tuiasi.ro}{\footnotesize{vmanta@cs.tuiasi.ro}}&&&\footnotesize{email:}&\href{mailto:mike@cs.tuiasi.ro}{\footnotesize{mike@cs.tuiasi.ro}}
+\end{tabular*}
+
+
+\end{document}
