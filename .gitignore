@@ -1,0 +1,11 @@
+
+#ignore windows thumbnails
+Thumbs.db
+
+#ignore latex and LEd temporary files
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.undo
